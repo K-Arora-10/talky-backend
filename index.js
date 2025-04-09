@@ -9,9 +9,11 @@ httpServer.listen(process.env.PORT, "0.0.0.0", () => {
 
 const io = new Server(httpServer, {
   cors: {
-    origin: "*", // or restrict to frontend origin if needed
-    methods: ["GET", "POST"]
+    origin: "https://talkyy.netlify.app", 
+    methods: ["GET", "POST"],
+    credentials: true
   }
+  
 });
 
 
