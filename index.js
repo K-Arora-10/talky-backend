@@ -36,8 +36,8 @@ io.on('connection', (socket) => {
     // console.log('a user connected',socket.id);
 
 
-    socket.on('user-call',({to,offer})=>{
-      io.to(to).emit('incoming-call',{from : socket.id,offer})
+    socket.on('user-call',({to,offer,rname})=>{
+      io.to(to).emit('incoming-call',{from : socket.id,offer,rname})
     }) 
 
     socket.on('call-accepted',({to,ans})=>{
